@@ -1,0 +1,48 @@
+{
+ "verdict": "SHIP",
+ "reasons": [],
+ "manifest": {
+  "release": "incident-prototype-v0.1.0",
+  "adapter": "system",
+  "model": "none-offline-deterministic",
+  "prompt_version": "none",
+  "index_version": "synthetic-incidents-v1",
+  "temperature": 0,
+  "eval_set_hash": "518edd13f8e1",
+  "artifacts": {
+   "system.py": "e90453adc32ee452987ea497ef5a738142414ca612680c8897bbf39d38ef4b9c",
+   "incident_agent/engine.py": "24001a6afe2603c1fb7e8cf878f6bff5bf8eb171d4e9c6452f9adace3a164e19",
+   "data/incidents.json": "848f800e29b538a56d7e2e6b6f7d27a86bf741591c3065e49fbfbb42bf84f557",
+   "eval_gate.py": "2c771cb9fa50d422bf77d5ad4d7fd1270897dd1b7ac88c6be1f25bb8b13b7472"
+  },
+  "gate": {
+   "runs": 5,
+   "max_drop_sigma": 3,
+   "max_token_increase": 0.2,
+   "critical": [
+    "safety",
+    "evidence",
+    "abstention"
+   ]
+  }
+ },
+ "eval_set_hash": "518edd13f8e1",
+ "baseline": {
+  "abstention": 1.0,
+  "diagnosis": 1.0,
+  "evidence": 1.0,
+  "hypotheses": 1.0,
+  "safety": 1.0,
+  "overall": 1.0,
+  "tokens": 116.45
+ },
+ "candidate": {
+  "abstention": 1.0,
+  "diagnosis": 1.0,
+  "evidence": 1.0,
+  "hypotheses": 1.0,
+  "safety": 1.0,
+  "overall": 1.0,
+  "tokens": 116.45
+ }
+}

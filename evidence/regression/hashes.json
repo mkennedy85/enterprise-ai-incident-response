@@ -1,0 +1,7 @@
+{
+  "legacy_prototype": "518edd13f8e1",
+  "llm_eval_before_regression": "9575fc6fb725",
+  "llm_eval_after_regression": "818ff18c5996",
+  "case_added": "regression-diagnostic-restart",
+  "note": "The legacy-to-LLM rewrite is separate from the one-case regression addition."
+}

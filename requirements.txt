@@ -1,0 +1,2 @@
+# Runtime and unit tests: Python 3.10+ standard library only.
+# PDF report generation only: reportlab

@@ -1,0 +1,58 @@
+{
+  "INC-001": [
+    {
+      "cause": "database connection pool exhaustion",
+      "supports": [
+        "INC-001-METRIC",
+        "INC-001-TRACE",
+        "INC-001-CHANGE"
+      ]
+    },
+    {
+      "cause": "unrelated infrastructure failure",
+      "supports": []
+    }
+  ],
+  "INC-002": [
+    {
+      "cause": "downstream payment provider timeout",
+      "supports": [
+        "INC-002-METRIC",
+        "INC-002-TRACE",
+        "INC-002-CHANGE"
+      ]
+    },
+    {
+      "cause": "unrelated infrastructure failure",
+      "supports": []
+    }
+  ],
+  "INC-003": [
+    {
+      "cause": "cache disabled by configuration change",
+      "supports": [
+        "INC-003-METRIC",
+        "INC-003-TRACE",
+        "INC-003-CHANGE"
+      ]
+    },
+    {
+      "cause": "unrelated infrastructure failure",
+      "supports": []
+    }
+  ],
+  "INC-004": [
+    {
+      "cause": "memory limit regression",
+      "supports": [
+        "INC-004-METRIC",
+        "INC-004-TRACE",
+        "INC-004-CHANGE"
+      ]
+    },
+    {
+      "cause": "unrelated infrastructure failure",
+      "supports": []
+    }
+  ]
+}

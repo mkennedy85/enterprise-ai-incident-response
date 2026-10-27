@@ -1,0 +1,21 @@
+test_execution_error_cannot_create_baseline (test_project.GateTests.test_execution_error_cannot_create_baseline) ... ok
+test_hash_mismatch_blocks_before_model (test_project.GateTests.test_hash_mismatch_blocks_before_model) ... ok
+test_ship_then_real_output_regression_blocks (test_project.GateTests.test_ship_then_real_output_regression_blocks) ... ok
+test_stale_artifact_blocks (test_project.GateTests.test_stale_artifact_blocks) ... ok
+test_actions_and_mixed_requests_still_refused (test_project.InvestigatorTests.test_actions_and_mixed_requests_still_refused) ... ok
+test_diagnostic_regression_reaches_model_with_candidate_setting (test_project.InvestigatorTests.test_diagnostic_regression_reaches_model_with_candidate_setting) ... ok
+test_free_text_citations_rejected (test_project.InvestigatorTests.test_free_text_citations_rejected) ... ok
+test_http_error_does_not_echo_credentials (test_project.InvestigatorTests.test_http_error_does_not_echo_credentials) ... ok
+test_incomplete_response_fails (test_project.InvestigatorTests.test_incomplete_response_fails) ... ok
+test_missing_key_fails_instead_of_mock_fallback (test_project.InvestigatorTests.test_missing_key_fails_instead_of_mock_fallback) ... ok
+test_model_abstention (test_project.InvestigatorTests.test_model_abstention) ... ok
+test_payload_excludes_ground_truth_and_redacts (test_project.InvestigatorTests.test_payload_excludes_ground_truth_and_redacts) ... ok
+test_real_failure_reproduced_in_preserved_original (test_project.InvestigatorTests.test_real_failure_reproduced_in_preserved_original) ... ok
+test_responses_http_contract (test_project.InvestigatorTests.test_responses_http_contract) ... ok
+test_unknown_and_ambiguous_never_call_model (test_project.InvestigatorTests.test_unknown_and_ambiguous_never_call_model) ... ok
+test_unknown_citations_rejected (test_project.InvestigatorTests.test_unknown_citations_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.549s
+
+OK

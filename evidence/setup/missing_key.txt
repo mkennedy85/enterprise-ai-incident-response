@@ -1,0 +1,4 @@
+$ python3 eval_gate.py --aa
+BLOCK: OPENAI_API_KEY is not set. Configure it locally or as a GitHub Actions secret; no model call was made.
+Exit code: 2
+No baseline was created. No API call was made.

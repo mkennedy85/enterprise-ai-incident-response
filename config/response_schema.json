@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "insufficient"
+      ]
+    },
+    "cause": {
+      "type": "string"
+    },
+    "explanation": {
+      "type": "string"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "alternative": {
+      "type": "string"
+    },
+    "recommendation": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "status",
+    "cause",
+    "explanation",
+    "evidence_ids",
+    "alternative",
+    "recommendation"
+  ],
+  "additionalProperties": false
+}

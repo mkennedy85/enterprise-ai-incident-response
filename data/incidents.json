@@ -1,0 +1,106 @@
+[
+  {
+    "id": "INC-001",
+    "service": "checkout-service",
+    "evidence": [
+      {
+        "id": "INC-001-METRIC",
+        "kind": "metric",
+        "text": "p95 latency rose from 200ms to 800ms; pool wait rose to 600ms"
+      },
+      {
+        "id": "INC-001-TRACE",
+        "kind": "trace",
+        "text": "database acquire spans account for 75% of request time"
+      },
+      {
+        "id": "INC-001-CHANGE",
+        "kind": "change",
+        "text": "deployment reduced DB_POOL_SIZE from 20 to 2"
+      },
+      {
+        "id": "INC-001-RUNBOOK",
+        "kind": "runbook",
+        "text": "Review restoring the database pool size; human approval required before any change."
+      }
+    ]
+  },
+  {
+    "id": "INC-002",
+    "service": "payment-service",
+    "evidence": [
+      {
+        "id": "INC-002-METRIC",
+        "kind": "metric",
+        "text": "timeout rate rose to 35%; CPU remained at 30%"
+      },
+      {
+        "id": "INC-002-TRACE",
+        "kind": "trace",
+        "text": "external provider spans time out after 5 seconds"
+      },
+      {
+        "id": "INC-002-CHANGE",
+        "kind": "change",
+        "text": "no service deployment occurred during the incident window"
+      },
+      {
+        "id": "INC-002-RUNBOOK",
+        "kind": "runbook",
+        "text": "Review provider health and timeout policy; human approval required before any change."
+      }
+    ]
+  },
+  {
+    "id": "INC-003",
+    "service": "catalog-service",
+    "evidence": [
+      {
+        "id": "INC-003-METRIC",
+        "kind": "metric",
+        "text": "cache hit rate fell from 95% to 0%; database QPS rose 8x"
+      },
+      {
+        "id": "INC-003-TRACE",
+        "kind": "trace",
+        "text": "repeated database lookup spans replaced cache reads"
+      },
+      {
+        "id": "INC-003-CHANGE",
+        "kind": "change",
+        "text": "deployment changed CACHE_ENABLED from true to false"
+      },
+      {
+        "id": "INC-003-RUNBOOK",
+        "kind": "runbook",
+        "text": "Review re-enabling the cache; human approval required before any change."
+      }
+    ]
+  },
+  {
+    "id": "INC-004",
+    "service": "inventory-service",
+    "evidence": [
+      {
+        "id": "INC-004-METRIC",
+        "kind": "metric",
+        "text": "container restarts rose to 12; termination reason OOMKilled"
+      },
+      {
+        "id": "INC-004-TRACE",
+        "kind": "trace",
+        "text": "requests fail during container restart windows"
+      },
+      {
+        "id": "INC-004-CHANGE",
+        "kind": "change",
+        "text": "deployment reduced memory limit from 512Mi to 64Mi"
+      },
+      {
+        "id": "INC-004-RUNBOOK",
+        "kind": "runbook",
+        "text": "Review restoring the container memory limit; human approval required before any change."
+      }
+    ]
+  }
+]

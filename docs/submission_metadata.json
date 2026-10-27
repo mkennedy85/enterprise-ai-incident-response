@@ -1,0 +1,9 @@
+{
+  "team_members": [],
+  "repository_url": "PENDING - choose repository",
+  "tested_commit": "PENDING - final live CI head",
+  "pull_request_url": "PENDING - publish candidate PR",
+  "ci_run_url": "PENDING - run GitHub Actions",
+  "on_call_owner": "PENDING - confirm team owner",
+  "submission_status": "DRAFT - live model and GitHub results pending"
+}

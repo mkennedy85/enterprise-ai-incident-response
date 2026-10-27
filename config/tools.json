@@ -1,0 +1,19 @@
+{
+  "version": "read-only-local-v1",
+  "model_tools": [],
+  "application_tools": [
+    {
+      "name": "lookup_incident",
+      "input": "one exact incident ID or service name",
+      "source": "data/incidents.json",
+      "access": "read-only",
+      "max_records": 1
+    }
+  ],
+  "retrieval": {
+    "strategy": "exact incident ID or unique service; no embeddings",
+    "chunking": "one evidence record per chunk",
+    "max_records": 4
+  },
+  "redaction": "credential assignments and key-shaped tokens before model access; synthetic corpus only"
+}
