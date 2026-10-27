@@ -10,3 +10,7 @@ eval_results.jsonl
 work/
 reference/
 reports/
+
+# Retain measured release evidence, not transient root-level outputs.
+!evidence/live/**/eval_results.jsonl
+!evidence/live/**/gate_report.json

@@ -1,0 +1,8 @@
+{
+  "workflow_run_id": 40449785439,
+  "workflow_url": "https://github.com/mkennedy85/enterprise-ai-incident-response/actions/runs/40449785439",
+  "tested_head_commit": "3fa1feef8f28f8d5fe3abdcc5b8b37e03f500903",
+  "github_event_merge_commit": "950f732de8a2350fce2fba903ec2abb684aaf697",
+  "baseline_base_commit": "b651a2e83f2e73c9e909f474073d5806cf5dacb1",
+  "artifact_name": "hw6-gate-950f732de8a2350fce2fba903ec2abb684aaf697"
+}

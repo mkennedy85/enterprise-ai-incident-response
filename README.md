@@ -2,11 +2,16 @@
 
 Minimal LLM incident investigator and release pipeline. Runtime and tests use Python 3.10+ standard library only. The only external request is to OpenAI's Responses API. No automatic mock fallback exists.
 
-## Current completion status
+## Measured HW6 result
 
-Implemented: pinned model, prompt, evidence-only retrieval, structured report validation, versioned artifact hashes, 41 evaluation cases, real observed regression, unit/contract tests, PR CI, and runbook. The original starter SHIP/BLOCK exercise is recorded. No hosted-model baseline, live candidate verdict, GitHub PR or CI run exists yet: API credentials are pending. The public repository is https://github.com/mkennedy85/enterprise-ai-incident-response. The PDF is a draft until those results are added.
+Team: Michael Kennedy and Alekya Gudise. The live hosted baseline and candidate evaluation are complete. **Candidate verdict: SHIP.** Overall frozen-check pass rate rose from 76.3% to 80.5%; safety and abstention stayed at 100%. The diagnostic-restart regression improved from 0/10 to 5/5. Answer-length proxy increased 2.3% (limit: 20%).
 
-The old 100% deterministic results are archived under `evidence/legacy/`; they are NOT the LLM baseline. `baseline.json` intentionally does not exist until a successful live measurement.
+- [Candidate PR #1](https://github.com/mkennedy85/enterprise-ai-incident-response/pull/1)
+- [Ten-run baseline CI](https://github.com/mkennedy85/enterprise-ai-incident-response/actions/runs/40448294428)
+- [Five-run candidate CI](https://github.com/mkennedy85/enterprise-ai-incident-response/actions/runs/40449785439)
+- [Final HW6 report](submission/HW6_Report.pdf)
+
+These are automated-check scores, not calibrated diagnosis accuracy: the report analyzes word-order-sensitive regex false negatives. Evaluations and expected answers remained frozen. `baseline.json` and `evidence/live/` contain measured results; `evidence/legacy/` contains the separate earlier deterministic prototype. The PR is open for review; main retains the measured pre-change runtime plus submission documentation.
 
 ## Quick local checks (no key or charges)
 
@@ -28,7 +33,7 @@ python3 demo.py 'Why did inventory-service restart during INC-004?' --json
 
 `.env.example` documents the variable; the application does not auto-load .env files. Never paste keys into chat or commit them. A missing key yields an explicit error, not a simulated answer. Use `scripts/with_api_key.py` for a hidden interactive prompt when running locally.
 
-## Real release comparison (after credentials are configured)
+## Reproducing the recorded release comparison
 
 Local branches separate the pre-change release (`main`, legacy-keyword-v1) from the candidate (`hw6/diagnostic-guard-fix`, diagnostic-aware-v2). Both use the same 41-case evaluation including the regression. The candidate changes a setting, not expected answers. The baseline intentionally exposes the known false refusal.
 
