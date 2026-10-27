@@ -4,7 +4,7 @@ Minimal LLM incident investigator and release pipeline. Runtime and tests use Py
 
 ## Current completion status
 
-Implemented: pinned model, prompt, evidence-only retrieval, structured report validation, versioned artifact hashes, 41 evaluation cases, real observed regression, unit/contract tests, PR CI, and runbook. The original starter SHIP/BLOCK exercise is recorded. No hosted-model baseline, live candidate verdict, GitHub PR or CI run exists yet: API credentials and a repository destination are pending. The PDF is a draft until those results are added.
+Implemented: pinned model, prompt, evidence-only retrieval, structured report validation, versioned artifact hashes, 41 evaluation cases, real observed regression, unit/contract tests, PR CI, and runbook. The original starter SHIP/BLOCK exercise is recorded. No hosted-model baseline, live candidate verdict, GitHub PR or CI run exists yet: API credentials are pending. The public repository is https://github.com/mkennedy85/enterprise-ai-incident-response. The PDF is a draft until those results are added.
 
 The old 100% deterministic results are archived under `evidence/legacy/`; they are NOT the LLM baseline. `baseline.json` intentionally does not exist until a successful live measurement.
 
@@ -60,3 +60,7 @@ The gate uses characters/4 as its original answer-token proxy; actual API input/
 API contract and pinned model sources:
 - https://developers.openai.com/api/docs/guides/structured-outputs
 - https://developers.openai.com/api/docs/models/gpt-5.4-mini
+
+## Run entirely through GitHub Actions
+
+After adding the OPENAI_API_KEY repository secret, manually dispatch the **Measure HW6 baseline** workflow on main. It runs a smoke test and ten-run A/A, and uploads the baseline plus output without automatically committing it. Review and download that artifact, commit baseline.json and the captured evidence to main, merge main into the candidate, then open its PR to run the comparison. This route needs no local API-key file.
