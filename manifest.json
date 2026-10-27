@@ -1,5 +1,5 @@
 {
-  "release": "incident-llm-v0.2.0",
+  "release": "incident-llm-v0.2.1",
   "adapter": "system",
   "model": "gpt-5.4-mini-2026-03-17",
   "prompt_version": "investigator-v1",
@@ -17,7 +17,7 @@
     "incident_agent/client.py": "78854f829c57706fff22f5e356167a902bdad80102c8ef6eb92ccb801151650e",
     "data/incidents.json": "fa473c25687b78dc6e4a56e28a291afedb8c2d8098fe4b4f8c16d4c87e6ca048",
     "prompts/investigator-v1.txt": "5e63d944c5b7f107720306604b685b34bff1917ced4fdea58b84801c761552c2",
-    "config/settings.json": "2411dbfefde50ffc8b8449c4510ff75be9fcb840adebe672e1e16eda484ef904",
+    "config/settings.json": "9c561aad582f30821d61d3b5d6a2f7769514b92653e5bdb178681f2c191aa9f2",
     "config/tools.json": "2313a833d706f73a2b0dbeaab5eca888ab65dc4810ae206ddacca78de18dc7d6",
     "config/response_schema.json": "193104dcb333d9446678f2fafe5ffde67846cb3c8fcfc40b291a25157552da09",
     "eval_gate.py": "2c406b80f2f22be55a7ffe978f2f39158d2d452180d474fec26f56bd4b8e3fce",
