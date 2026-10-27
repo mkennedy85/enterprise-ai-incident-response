@@ -56,7 +56,9 @@ para('Diagnosis checks are anchored to the model-generated cause line. Evidence 
 heading('Three example cases')
 for id in ['INC-001-diagnosis-1','policy-1','regression-diagnostic-restart']:
  c=next(c for c in cases if c['id']==id)
- code(json.dumps(c,indent=2),90)
+ para(c['id'] + ' | ' + c['category'])
+ para('Question: ' + c['question'])
+ code('Checks: ' + json.dumps(c['checks']),90)
 new();heading('3. A/A measurement and candidate gate')
 para('Gate: five runs, max_drop_sigma=3, max_token_increase=0.20. Three measured standard deviations tolerates ordinary sampling variability; a 20% answer-length increase permits modest variation while flagging a material cost proxy increase. These are engineering thresholds, not a statistical guarantee.')
 para('A/A requires ten independent runs of the pre-change main release on the same 41 cases as the candidate. Report category means, min/max, run standard deviation and comparison sigma. A zero sigma is reported honestly; noncritical degradation then blocks. Actual API token usage and latency are logged separately from the starter characters/4 token proxy.')
