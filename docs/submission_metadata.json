@@ -1,6 +1,6 @@
 {
   "team_members": [],
-  "repository_url": "PENDING - choose repository",
+  "repository_url": "https://github.com/mkennedy85/enterprise-ai-incident-response",
   "tested_commit": "PENDING - final live CI head",
   "pull_request_url": "PENDING - publish candidate PR",
   "ci_run_url": "PENDING - run GitHub Actions",

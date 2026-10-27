@@ -1,0 +1,38 @@
+name: Measure HW6 baseline
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  baseline:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify baseline release
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/release.py --check
+      - name: Smoke test the hosted model
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python demo.py 'Investigate INC-001'
+      - name: Measure ten-run baseline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python scripts/live_measure.py aa
+      - name: Preserve release evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hw6-baseline-${{ github.sha }}
+          path: |
+            baseline.json
+            evidence/live/aa/
+            manifest.json
+            eval_results.jsonl
+          if-no-files-found: warn
