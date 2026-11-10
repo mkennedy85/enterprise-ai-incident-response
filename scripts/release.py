@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = ["system.py", "incident_agent/__init__.py", "incident_agent/engine.py", "incident_agent/client.py",
              "data/incidents.json", "prompts/investigator-v1.txt", "config/settings.json",
-             "config/tools.json", "config/response_schema.json", "eval_gate.py", "scripts/release.py"]
+             "incident_agent/transport.py", "config/tls_policy.json", "config/tools.json", "config/response_schema.json", "eval_gate.py", "scripts/release.py"]
 
 def refresh(check=False):
     manifest = json.loads((ROOT / "manifest.json").read_text())

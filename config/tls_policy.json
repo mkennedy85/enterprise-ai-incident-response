@@ -1,0 +1,4 @@
+{
+  "minimum_version": "TLSv1.2",
+  "tls12_cipher_policy": "modern-aead"
+}
