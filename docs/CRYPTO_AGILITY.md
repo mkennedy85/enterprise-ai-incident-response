@@ -1,0 +1,9 @@
+# Versioned TLS policy
+
+The Responses client constructs its SSL context in `incident_agent/transport.py` and reads `config/tls_policy.json`. `minimum_version` accepts TLSv1.2 (default) or TLSv1.3. `tls12_cipher_policy` accepts modern-aead (ECDHE + AES-GCM/ChaCha20) or aes256-gcm (ECDHE + AES-256-GCM). The algorithm choice is configuration, not a client rewrite. Both values are allowlisted; malformed or missing policy aborts before a request. System CA validation and hostname checks remain mandatory.
+
+OpenSSL's set_ciphers affects TLS 1.2 and earlier, not TLS 1.3 suites or key-exchange groups. The minimum already disallows versions before 1.2. This change does not implement ML-KEM or prove PQC protection. A hybrid TLS rollout requires a supported client/provider runtime and real negotiated-group evidence. On the inspected Python 3.14/OpenSSL 3.6.5 build, set_ecdh_curve('X25519MLKEM768') raises ValueError; do not silently downgrade or claim success.
+
+To change policy, edit the JSON, run all unit tests, regenerate the release manifest, review its diff, and run release.py --check. Validate a real handshake against the intended provider before rollout. Roll back by restoring the previous reviewed JSON and regenerating manifest, never by disabling certificate verification. Live model calls are unnecessary for unit checks.
+
+Budget guard: on the exact `hw7/crypto-agility` branch, the workflow runs unit and manifest checks but skips its live model-evaluation and artifact-upload steps for both pull-request and manual runs. It does not inject the API key or call the model for that step. Other branches keep the existing live-evaluation behavior. The separate baseline workflow is manual-only and must not be dispatched for this change. This is a no-model-call verification scope, not a model quality-gate pass or an account-wide spending limit. No deployment is part of this change.

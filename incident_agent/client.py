@@ -3,6 +3,7 @@ import json
 import os
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
+from .transport import create_tls_context
 
 class ModelError(RuntimeError):
     pass
@@ -15,10 +16,14 @@ def require_key():
 
 def complete(payload, timeout):
     key = require_key()
+    try:
+        context = create_tls_context()
+    except (ValueError, OSError):
+        raise ModelError("Invalid TLS policy; no model call was made.") from None
     request = Request("https://api.openai.com/v1/responses", data=json.dumps(payload).encode(),
                       headers={"Authorization": "Bearer " + key, "Content-Type": "application/json"}, method="POST")
     try:
-        with urlopen(request, timeout=timeout) as response:
+        with urlopen(request, timeout=timeout, context=context) as response:
             body = json.load(response)
     except HTTPError as exc:
         # Do not print response bodies or headers; they can contain submitted data.
